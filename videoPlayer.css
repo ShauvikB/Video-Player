@@ -1,0 +1,71 @@
+body {
+	background:yellow;
+  }
+
+  video_player { 
+  display: table; line-height: 3;
+  font-size: 0; background: #000;
+  max-width: 180%;
+  margin: 20% auto;
+}
+
+ video {
+ margin-top: 5%;
+  margin-right: 5%;
+  margin-left: 2%;
+ }
+
+
+.glyphicon {
+    font-size: 250%;
+	margin-left: 5%;
+}
+
+progress {
+  border: none;
+  width: 120%;
+  height: 30px;
+  background: crimson;
+  margin-left: 2%;
+   margin-right: 5%;
+}
+
+
+defaultBar {
+	position:relative;
+	float:left;
+	width:220%;
+	height:16px;
+	padding:4px;
+	border: 2px solid black;
+	margin-left: 5%;
+	background:yellow;
+}
+
+progressBar {
+	position:absolute;
+	color: lightblue;
+	width:0px;
+	height:16px;
+	background:blue;
+}
+
+progressBar::-webkit-progress-value {
+  background: lightblue;
+}
+
+progressBar::-moz-progress-bar {
+  background: lightcolor;
+}
+
+ul {
+	text-align:right
+	list-style-type: none;
+	margin-top: 5%;
+	margin-left: 50%
+}
+
+li {
+ font-size: 170%
+ 
+}

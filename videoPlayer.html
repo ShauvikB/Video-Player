@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>Video Player</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="videoPlayer.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+	 <div class="row content">
+		 <div class="col-sm-7 col-md-6 col-lg-7">
+			<div id="video_player"> 
+				  <video id="video1" width="120%">
+						<source src="mov_bbb.mp4" type="video/mp4">
+						<source src="mov_bbb.ogg" type="video/ogg">
+						Your browser does not support HTML5 video.
+				  </video>
+			</div> 
+		
+			<br><br>
+			<span onclick="pause()" class="glyphicon glyphicon-pause"></span>
+			<span onclick="play()" class="glyphicon glyphicon-play"></span>
+			<span onclick="increaseVolume()" class="glyphicon glyphicon-plus"></span>
+			<span onclick="decreaseVolume()" class="glyphicon glyphicon-minus"></span>
+			<span onclick="reload()" class="glyphicon glyphicon-stop"></span>
+			<span onclick="muteUnmute()" class="glyphicon glyphicon-headphones"></span>
+			<span onclick="addone()" class="glyphicon glyphicon-thumbs-up" style="color:green"></span>
+			<span id="likeCount" style="color:green"></span>
+			<span onclick="subtractone()" class="glyphicon glyphicon-thumbs-down" style="color:red"></span>
+			<span id="unlikeCount" style="color:red"></span>
+			<br><br>
+				<input type="hidden" id="myLikefield" value="0" size="5" readonly="readonly">
+				<input type="hidden" id="myUnlikefield" value="0" size="5" readonly="readonly">
+				
+				<div id="defaultBar">
+					<progress id="progressBar" value="0" max="100">
+					</progress>
+				</div>
+				<div style="clear:both"></div> 
+
+			</div>
+			  
+		<div class="col-sm-5 col-md-6 col-lg-5">
+			<ul id="playlist" width="120%" style="list-style: none;">
+				<li src="Funny1.mp4" class="glyphicon glyphicon-play" style="color:green">Happy Fit</li>
+				<li src="Funny2.mp4" class="glyphicon glyphicon-play" style="color:green">Sintel</li>          
+				<li src="Funny3.mp4" class="glyphicon glyphicon-play" style="color:green">Resident Evil</li>      
+				<li src="Funny4.mp4" class="glyphicon glyphicon-play" style="color:green">Big Buck Bunny</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script src="videoPlayer.js"></script>
+
+</body> 
+</html>

@@ -1,8 +1,8 @@
 function doFirst(){
 	barSize=1050;
 	myVideo = document.getElementById("video1");   
-	bar=document.getElementById('defaultBar');
-	progressBar=document.getElementById('progressBar');
+	bar = document.getElementById('defaultBar');
+	progressBar = document.getElementById('progressBar');
     screenWidth = screen.width;
 	bar.addEventListener('click', clickedBar, false);
 }
@@ -14,8 +14,9 @@ function play() {
 
 function update() {
 	if (!myVideo.ended) {
-		var size=parseInt(myVideo.currentTime*barSize/myVideo.duration);
-		progressBar.style.width=size+'px';
+		var percentage = Math.floor((100 / myVideo.duration) * myVideo.currentTime);
+		progressBar.value = percentage;
+		progressBar.innerHTML = percentage + '% played';
 	} 
 }
 
@@ -24,7 +25,9 @@ function clickedBar(e){
 		var mouseX=e.pageX-bar.offsetLeft;
 		var newtime=mouseX*myVideo.duration/barSize;
 		myVideo.currentTime=newtime;
-		progressBar.style.width=mouseX+'px';
+		var percentage = Math.floor(mouseX / 10);
+		progressBar.value = percentage;
+		progressBar.innerHTML = percentage + '% played';
 	}
 }
 

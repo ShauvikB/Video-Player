@@ -4,6 +4,8 @@ function doFirst(){
 	bar = document.getElementById('defaultBar');
 	progressBar = document.getElementById('progressBar');
     screenWidth = screen.width;
+	localStorage.setItem("likeCount", 0);
+	localStorage.setItem("unlikeCount", 0);
 	bar.addEventListener('click', clickedBar, false);
 }
 
@@ -57,15 +59,15 @@ function muteUnmute() {
 }
 
 function addone() {
-	var value = document.getElementById("myLikefield").value;
+	var value = localStorage.getItem("likeCount");
 	document.getElementById("likeCount").innerHTML = Number(value) + 1;
-   document.getElementById("myLikefield").value = document.getElementById("likeCount").innerHTML;
+	localStorage.setItem("likeCount", Number(value) + 1);
 }
 
 function subtractone() {
-	var value = document.getElementById("myUnlikefield").value;
+	var value = localStorage.getItem("unlikeCount");
 	document.getElementById("unlikeCount").innerHTML = Number(value) + 1;
-    document.getElementById("myUnlikefield").value = document.getElementById("unlikeCount").innerHTML;
+	localStorage.setItem("unlikeCount", Number(value) + 1);
 }
 
 
